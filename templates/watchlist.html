@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{user.name}}'s watchlist</title>
+</head>
+<body>
+    <a href="/" >return index</a>
+    <h1>{{user.name}}</h1>
+    {% if user.bio %}
+        <i>{{user.bio}}</i>
+    {% else %}
+        <i>this user not provide bio</i>
+    {% endif %}
+<!--下面是电影清单-->
+    <h3>{{user.name}}'s watchlist({{movies|length}}):</h3>
+    <ul>
+        {% for movie in movies%}
+        <li>{{movie.name}}-{{movie.years}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
